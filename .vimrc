@@ -98,7 +98,7 @@ set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 " Remove all trailing whitespace by pressing F5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <leader>o :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " setting for easy motion
 map <Leader> <Plug>(easymotion-prefix)
@@ -106,6 +106,9 @@ map <Leader> <Plug>(easymotion-prefix)
 " split behaviours
 set splitbelow
 set splitright
+
+" set toggle for paste mode
+set pastetoggle=<F2>
 
 " pass sequence to outer terminal to get bg
 if exists("$TMUX")
