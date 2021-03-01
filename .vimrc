@@ -65,8 +65,8 @@ set confirm
 " mouse
 set mouse=a
 
-" Clear highlighting with Enter in command mode
-nnoremap <CR> :noh<CR><CR>
+" Clear highlighting with double click space
+nnoremap <leader><space> :noh<CR>
 
 " Indentation setting
 set shiftwidth=4
