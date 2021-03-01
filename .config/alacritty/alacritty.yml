@@ -1,0 +1,139 @@
+shell:
+  program: /usr/local/bin/tmux
+  # program: /Users/Haodong/sources/tmux/tmux
+  args:
+   - new-session
+   - -A
+   - -s
+   - main
+      
+
+selection:
+  save_to_clipboard: true
+
+window:
+  decorations: buttonless
+
+font:
+  # The size to use.
+  size: 12
+  # The normal (roman) font face to use.
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+
+  glyph_offset:
+    x: 0
+    y: 1
+
+env:
+  TERM: xterm-256color
+
+
+schemes:
+  pro: &pro
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+
+   # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#97040c'
+      green:   '#17a41a'
+      yellow:  '#99981d'
+      blue:    '#0516af'
+      magenta: '#b119b0'
+      cyan:    '#1aa6b1'
+      white:   '#bfbfbf'
+
+   # Bright colors
+    bright:
+      black:   '#666666'
+      red:     '#e30a17'
+      green:   '#21d726'
+      yellow:  '#e5e431'
+      blue:    '#0b24fb'
+      magenta: '#e323e3'
+      cyan:    '#27e5e4'
+      white:   '#e6e5e6'
+
+  iterm: &iterm
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#c7c7c7'
+
+   # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#c71e12'
+      green:   '#00c120'
+      yellow:  '#c7c327'
+      blue:    '#0a2fc4'
+      magenta: '#c839c5'
+      cyan:    '#01c5c6'
+      white:   '#c7c7c7'
+
+   # Bright colors
+    bright:
+      black:   '#686868'
+      red:     '#ff6f6b'
+      green:   '#67f86f'
+      yellow:  '#fffa72'
+      blue:    '#6a76fc'
+      magenta: '#ff7cfd'
+      cyan:    '#68fdfe'
+      white:   '#ffffff'
+
+  # Colors (Hyper)
+  hyper: &hyper
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    cursor:
+      text: '#F81CE5'
+      cursor: '#ffffff'
+
+    # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#fe0100'
+      green:   '#33ff00'
+      yellow:  '#feff00'
+      blue:    '#0066ff'
+      magenta: '#cc00ff'
+      cyan:    '#00ffff'
+      white:   '#d0d0d0'
+
+    # Bright colors
+    bright:
+      black:   '#808080'
+      red:     '#fe0100'
+      green:   '#33ff00'
+      yellow:  '#feff00'
+      blue:    '#0066ff'
+      magenta: '#cc00ff'
+      cyan:    '#00ffff'
+      white:   '#FFFFFF'
+
+colors: *hyper
+
+key_bindings:
+  - { key: Comma, mods: Command, command: {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]} }
+  - { key: B,     mods: Alt,     chars: "\x1bb"} # one word left
+  - { key: F,    mods: Alt,     chars: "\x1bf"} # one word right
+  - { key: D,    mods: Alt,     chars: "\x1bd"} # delete one word
+  - { key: U,    mods: Alt,     chars: "\x1bu"} 
