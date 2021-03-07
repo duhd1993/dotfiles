@@ -17,7 +17,6 @@ if dein#load_state('/Users/Haodong/.vim/bundles')
   " Let dein manage dein
   " Required:
   call dein#add('/Users/Haodong/.vim/bundles/repos/github.com/Shougo/dein.vim')
-
   " Add or remove your plugins here like this:
   call dein#add('jceb/vim-orgmode')
   call dein#add('preservim/nerdtree')
@@ -29,6 +28,8 @@ if dein#load_state('/Users/Haodong/.vim/bundles')
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('easymotion/vim-easymotion')
   call dein#add('gu-fan/riv.vim')
+  "call dein#add('Raimondi/delimitMate')
+  call dein#add('jiangmiao/auto-pairs')
 
   " Required:
   call dein#end()
@@ -111,6 +112,16 @@ set splitright
 set pastetoggle=<F2>
 
 " pass sequence to outer terminal to get bg
-if exists("$TMUX")
+if $TERM =~ "tmux"
     let &t_RB="\ePtmux;\e\e]11;?\007\e\\"
 endif
+
+" paste does not replace default buffer
+xnoremap <silent> p p:let @"=@0<CR>
+
+" fix meta-keys which generate <Esc>a .. <Esc>z
+for i in range(97,122)
+  let c = nr2char(i)
+  exec "map \e".c." <M-".c.">"
+  exec "map! \e".c." <M-".c.">"
+endfor

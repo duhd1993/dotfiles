@@ -167,4 +167,12 @@ key_bindings:
   - { key: B,     mods: Alt,     chars: "\x1bb"} # one word left
   - { key: F,    mods: Alt,     chars: "\x1bf"} # one word right
   - { key: D,    mods: Alt,     chars: "\x1bd"} # delete one word
-  - { key: U,    mods: Alt,     chars: "\x1bu"} 
+  - { key: U,    mods: Alt,     chars: "\x1bu"}
+  - { key: N,    mods: Alt,     chars: "\x1bn"}
+  - { key: P,    mods: Alt,     chars: "\x1bp"} 
+  - { key: Key1,      mods: Alt,       chars: "\x1b1"}
+  - { key: Key2,      mods: Alt,       chars: "\x1b2"}
+  - { key: Key3,      mods: Alt,       chars: "\x1b3"}
+  - { key: Key4,      mods: Alt,       chars: "\x1b4"}
+  - { key: Key5,      mods: Alt,       chars: "\x1b5"}   
+
