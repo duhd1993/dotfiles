@@ -4,8 +4,8 @@ if &compatible
 endif
 
 " Set leader to Space
-nnorema <SPACE> <Nop>
-let mapleader = "\<space>"
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
 
 " Required:
 set runtimepath+=/Users/Haodong/.vim/bundles/repos/github.com/Shougo/dein.vim
@@ -28,7 +28,6 @@ if dein#load_state('/Users/Haodong/.vim/bundles')
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('easymotion/vim-easymotion')
   call dein#add('gu-fan/riv.vim')
-  "call dein#add('Raimondi/delimitMate')
   call dein#add('jiangmiao/auto-pairs')
 
   " Required:
@@ -104,6 +103,9 @@ nnoremap <leader>o :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " setting for easy motion
 map <Leader> <Plug>(easymotion-prefix)
 
+" mapping for fzf
+nnoremap <silent> <leader>f :Files<CR>
+
 " split behaviours
 set splitbelow
 set splitright
@@ -120,8 +122,8 @@ endif
 xnoremap <silent> p p:let @"=@0<CR>
 
 " fix meta-keys which generate <Esc>a .. <Esc>z
-for i in range(97,122)
-  let c = nr2char(i)
-  exec "map \e".c." <M-".c.">"
-  exec "map! \e".c." <M-".c.">"
-endfor
+if !has("nvim")
+    set ttimeoutlen=100
+    exec "set <M-n>=\<Esc>n"
+    exec "set <M-p>=\<Esc>p"
+endif

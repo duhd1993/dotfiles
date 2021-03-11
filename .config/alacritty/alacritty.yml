@@ -169,7 +169,8 @@ key_bindings:
   - { key: D,    mods: Alt,     chars: "\x1bd"} # delete one word
   - { key: U,    mods: Alt,     chars: "\x1bu"}
   - { key: N,    mods: Alt,     chars: "\x1bn"}
-  - { key: P,    mods: Alt,     chars: "\x1bp"} 
+  - { key: P,    mods: Alt,     chars: "\x1bp"}
+  - { key: J,    mods: Alt,     chars: "\x1bj"} 
   - { key: Key1,      mods: Alt,       chars: "\x1b1"}
   - { key: Key2,      mods: Alt,       chars: "\x1b2"}
   - { key: Key3,      mods: Alt,       chars: "\x1b3"}
