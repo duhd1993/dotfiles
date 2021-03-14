@@ -22,14 +22,14 @@ colors
 # load plugins
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::functions.zsh
-zinit light zdharma/fast-syntax-highlighting
 zinit ice svn
 zinit snippet OMZ::plugins/osx
 zinit light zsh-users/zsh-autosuggestions
-zinit ice as"completion"
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 zinit snippet OMZP::fasd
+zinit wait lucid atinit'zicompinit; zicdreplay' for \
+    zdharma/fast-syntax-highlighting
 
 # some customization
 zle_highlight=('paste:none')
@@ -39,4 +39,3 @@ if [ "$(command -v exa)" ]; then
     alias la='exa -G  --color auto --icons -a -s type'
     alias ll='exa -l --color always --icons -a -s type'
 fi
-
