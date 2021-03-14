@@ -1,45 +1,23 @@
-"----- The Dein package manager ------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
 " Set leader to Space
 nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
-" Required:
-set runtimepath+=/Users/Haodong/.vim/bundles/repos/github.com/Shougo/dein.vim
+" vim-plug plugin manager
+call plug#begin('~/.vim/plugged')
 
-" Required:
-if dein#load_state('/Users/Haodong/.vim/bundles')
-  call dein#begin('/Users/Haodong/.vim/bundles')
+Plug 'jceb/vim-orgmode'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'gu-fan/riv.vim'
+Plug 'jiangmiao/auto-pairs'
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/Haodong/.vim/bundles/repos/github.com/Shougo/dein.vim')
-  " Add or remove your plugins here like this:
-  call dein#add('jceb/vim-orgmode')
-  call dein#add('preservim/nerdtree')
-  call dein#add('preservim/nerdcommenter')
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  call dein#add('easymotion/vim-easymotion')
-  call dein#add('gu-fan/riv.vim')
-  call dein#add('jiangmiao/auto-pairs')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-"----- End Dein package manager ------
-
+call plug#end()
 
 " auto toggle line number
 set number relativenumber

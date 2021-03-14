@@ -3,10 +3,12 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
+# initiate zinit
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+# load prompt theme
 zinit snippet OMZP::git
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
@@ -17,6 +19,8 @@ zinit snippet OMZT::ys
 autoload -U colors
 colors
 
+# load plugins
+zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::functions.zsh
 zinit light zdharma/fast-syntax-highlighting
 zinit ice svn
@@ -27,6 +31,7 @@ zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 zinit snippet OMZP::fasd
 
+# some customization
 zle_highlight=('paste:none')
 source ~/miniconda3/etc/profile.d/conda.sh
 if [ "$(command -v exa)" ]; then
