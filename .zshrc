@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/Users/Haodong/miniconda3/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/Users/Haodong/mambaforge/bin:/usr/local/bin:$PATH
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
@@ -33,7 +33,7 @@ zinit wait lucid atinit'zicompinit; zicdreplay' for \
 
 # some customization
 zle_highlight=('paste:none')
-source ~/miniconda3/etc/profile.d/conda.sh
+source ~/mambaforge/etc/profile.d/conda.sh
 if [ "$(command -v exa)" ]; then
     alias ls='exa -G  --color auto --icons -s type'
     alias la='exa -G  --color auto --icons -a -s type'
