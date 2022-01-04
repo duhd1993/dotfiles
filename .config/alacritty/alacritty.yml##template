@@ -1,5 +1,5 @@
 shell:
-{% if yadm.arch == "arm64" %}
+{% if yadm.class == "arm64" %}
   program: /opt/homebrew/bin/tmux
 {% else %}
   program: /usr/local/bin/tmux
