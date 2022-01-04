@@ -4,7 +4,8 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 # initiate zinit
-source "$HOME/.zinit/bin/zinit.zsh"
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -23,13 +24,13 @@ colors
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::functions.zsh
 zinit ice svn
-zinit snippet OMZ::plugins/osx
+zinit snippet OMZ::plugins/macos
 zinit light zsh-users/zsh-autosuggestions
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 zinit snippet OMZP::fasd
 zinit wait lucid atinit'zicompinit; zicdreplay' for \
-    zdharma/fast-syntax-highlighting
+    zdharma-continuum/fast-syntax-highlighting
 
 # some customization
 zle_highlight=('paste:none')
@@ -39,3 +40,4 @@ if [ "$(command -v exa)" ]; then
     alias la='exa -G  --color auto --icons -a -s type'
     alias ll='exa -l --color always --icons -a -s type'
 fi
+### End of Zinit's installer chunk

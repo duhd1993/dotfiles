@@ -1,12 +1,14 @@
 shell:
+{% if yadm.arch == "arm64" %}
+  program: /opt/homebrew/bin/tmux
+{% else %}
   program: /usr/local/bin/tmux
-  # program: /Users/Haodong/sources/tmux/tmux
+{% endif %}
   args:
    - new-session
    - -A
    - -s
    - main
-      
 
 selection:
   save_to_clipboard: true
@@ -19,17 +21,17 @@ font:
   size: 12
   # The normal (roman) font face to use.
   normal:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Regular
 
   # The bold font face
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Bold
 
   # The italic font face
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrains Mono
     style: Italic
 
   glyph_offset:
