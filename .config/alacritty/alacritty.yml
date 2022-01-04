@@ -1,0 +1,177 @@
+shell:
+  program: /usr/local/bin/tmux
+  args:
+   - new-session
+   - -A
+   - -s
+   - main
+
+selection:
+  save_to_clipboard: true
+
+window:
+  decorations: buttonless
+
+font:
+  # The size to use.
+  size: 12
+  # The normal (roman) font face to use.
+  normal:
+    family: JetBrains Mono
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: JetBrains Mono
+    style: Italic
+
+  glyph_offset:
+    x: 0
+    y: 1
+
+env:
+  TERM: xterm-256color
+
+
+schemes:
+  pro: &pro
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+
+   # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#97040c'
+      green:   '#17a41a'
+      yellow:  '#99981d'
+      blue:    '#0516af'
+      magenta: '#b119b0'
+      cyan:    '#1aa6b1'
+      white:   '#bfbfbf'
+
+   # Bright colors
+    bright:
+      black:   '#666666'
+      red:     '#e30a17'
+      green:   '#21d726'
+      yellow:  '#e5e431'
+      blue:    '#0b24fb'
+      magenta: '#e323e3'
+      cyan:    '#27e5e4'
+      white:   '#e6e5e6'
+
+  iterm: &iterm
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#c7c7c7'
+
+   # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#c71e12'
+      green:   '#00c120'
+      yellow:  '#c7c327'
+      blue:    '#0a2fc4'
+      magenta: '#c839c5'
+      cyan:    '#01c5c6'
+      white:   '#c7c7c7'
+
+   # Bright colors
+    bright:
+      black:   '#686868'
+      red:     '#ff6f6b'
+      green:   '#67f86f'
+      yellow:  '#fffa72'
+      blue:    '#6a76fc'
+      magenta: '#ff7cfd'
+      cyan:    '#68fdfe'
+      white:   '#ffffff'
+
+  hyper: &hyper
+    # Default colors
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    cursor:
+      text: '#F81CE5'
+      cursor: '#ffffff'
+
+    # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#fe0100'
+      green:   '#33ff00'
+      yellow:  '#feff00'
+      blue:    '#0066ff'
+      magenta: '#cc00ff'
+      cyan:    '#00ffff'
+      white:   '#d0d0d0'
+
+    # Bright colors
+    bright:
+      black:   '#808080'
+      red:     '#fe0100'
+      green:   '#33ff00'
+      yellow:  '#feff00'
+      blue:    '#0066ff'
+      magenta: '#cc00ff'
+      cyan:    '#00ffff'
+      white:   '#FFFFFF'
+  
+  fsh: &fsh
+    primary:
+      background: '0x282a36'
+      foreground: '0xf8f8f2'
+
+    cursor:
+      text: '0x44475a'
+      cursor: '0xf8f8f2'
+
+    # Normal colors
+    normal:
+      black:   '0x000000'
+      red:     '0xff5555'
+      green:   '0x50fa7b'
+      yellow:  '0xf1fa8c'
+      blue:    '0xbd93f9'
+      magenta: '0xff79c6'
+      cyan:    '0x8be9fd'
+      white:   '0xbfbfbf'
+
+    # Bright colors
+    bright:
+      black:   '0x4d4d4d'
+      red:     '0xff6e67'
+      green:   '0x5af78e'
+      yellow:  '0xf4f99d'
+      blue:    '0xcaa9fa'
+      magenta: '0xff92d0'
+      cyan:    '0x9aedfe'
+      white:   '0xe6e6e6'
+
+
+colors: *fsh
+
+key_bindings:
+  - { key: Comma, mods: Command, command: {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]} }
+  - { key: B,     mods: Alt,     chars: "\x1bb"} # one word left
+  - { key: F,    mods: Alt,     chars: "\x1bf"} # one word right
+  - { key: D,    mods: Alt,     chars: "\x1bd"} # delete one word
+  - { key: U,    mods: Alt,     chars: "\x1bu"}
+  - { key: N,    mods: Alt,     chars: "\x1bn"}
+  - { key: P,    mods: Alt,     chars: "\x1bp"}
+  - { key: J,    mods: Alt,     chars: "\x1bj"} 
+  - { key: Key1,      mods: Alt,       chars: "\x1b1"}
+  - { key: Key2,      mods: Alt,       chars: "\x1b2"}
+  - { key: Key3,      mods: Alt,       chars: "\x1b3"}
+  - { key: Key4,      mods: Alt,       chars: "\x1b4"}
+  - { key: Key5,      mods: Alt,       chars: "\x1b5"}   
+
