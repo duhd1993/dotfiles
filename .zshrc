@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/Users/Haodong/mambaforge/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/mambaforge/bin:/usr/local/bin:$PATH
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
@@ -40,4 +40,3 @@ if [ "$(command -v exa)" ]; then
     alias la='exa -G  --color auto --icons -a -s type'
     alias ll='exa -l --color always --icons -a -s type'
 fi
-### End of Zinit's installer chunk
