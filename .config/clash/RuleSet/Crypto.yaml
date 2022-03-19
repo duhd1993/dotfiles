@@ -1,0 +1,51 @@
+payload:
+  # Forum
+  - DOMAIN-SUFFIX,bitcointalk.org
+  
+  # Service
+  - DOMAIN-SUFFIX,bitpay.com
+  - DOMAIN-SUFFIX,impermax.finance
+  
+  # Chain
+  - DOMAIN-SUFFIX,lightning.network
+
+  # Exchange
+  - DOMAIN-SUFFIX,aex.com
+  - DOMAIN-SUFFIX,bibox.com
+  - DOMAIN-SUFFIX,binance.cc
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.org
+  - DOMAIN-SUFFIX,bitfinex.com
+  - DOMAIN-SUFFIX,bitmex.com
+  - DOMAIN-SUFFIX,ftx.com
+  - DOMAIN-SUFFIX,gate.io
+  - DOMAIN-SUFFIX,huobi.com
+  - DOMAIN-SUFFIX,okex.com
+  - DOMAIN-SUFFIX,poloniex.com
+  - DOMAIN-SUFFIX,sushi.com
+  - DOMAIN-SUFFIX,uniswap.org
+  - DOMAIN-SUFFIX,zb.com
+  - DOMAIN-SUFFIX,mexc.com
+  - DOMAIN-SUFFIX,paraswap.io
+  - DOMAIN-SUFFIX,coinex.com
+
+  # Analysis
+  - DOMAIN-SUFFIX,aicoin.com
+  - DOMAIN-SUFFIX,aimoon.com
+  - DOMAIN-SUFFIX,coingecko.com
+  - DOMAIN-SUFFIX,coinmarketcap.com
+  - DOMAIN-SUFFIX,tradingview.com
+  
+  # Mining
+  - DOMAIN-SUFFIX,ethermine.org
+  - DOMAIN-SUFFIX,2miners.com
+  - DOMAIN-SUFFIX,minerstat.com
+  - DOMAIN-SUFFIX,whattomine.com
+  - DOMAIN-SUFFIX,flexpool.io
+  - DOMAIN-SUFFIX,nicehash.com
+  - DOMAIN-SUFFIX,ethpool.org
+  - DOMAIN-SUFFIX,nanopool.org
+  - DOMAIN-SUFFIX,minexmr.com
+  - DOMAIN-SUFFIX,flypool.org
+  - DOMAIN-SUFFIX,ezil.me
+  

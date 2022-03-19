@@ -1,0 +1,111 @@
+mixed-port: 7890
+external-controller: 127.0.0.1:9090
+allow-lan: false
+mode: rule
+log-level: debug
+
+dns:
+  enable: true
+  ipv6: true
+  nameserver:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - 128.210.11.5
+
+proxies:
+  - name: "glider"
+    type: ss
+    server: 67.230.175.121
+    port: 1666
+    cipher: rc4-md5
+    password: "6f5497"
+  - name: "bwh"
+    type: ss
+    server: 67.230.175.121
+    port: 1888
+    cipher: aes-256-gcm
+    password: "794629"
+  - name: "vtr"
+    type: ss
+    server: 45.63.122.104
+    port: 1555
+    cipher: aes-128-gcm
+    password: "a1b2c3"
+  - name: "yecao"
+    type: ss
+    server: cn2.rongdede.com
+    port: 40024
+    cipher: rc4-md5
+    password: "ghty12"
+  - name: "music"
+    type: http
+    server: 67.230.175.121
+    port: 443
+    tls: true
+    skip-cert-verify: true
+
+
+proxy-groups:
+  - name: "CN"
+    type: select
+    proxies:
+      - DIRECT
+      - yecao
+      - vtr
+      - glider
+  - name: "OUT"
+    type: select
+    proxies:
+      - DIRECT
+      - vtr
+      - bwh
+  - name: "PROXY"
+    type: select
+    proxies:
+      - vtr
+      - bwh
+  - name: "load-balance"
+    type: load-balance
+    proxies:
+      - bwh
+      - glider
+      - vtr
+      - DIRECT
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    strategy: round-robin
+
+rule-providers:
+  StreamingCN:
+    type: http
+    behavior: classical
+    path: ./RuleSet/StreamingCN.yaml
+    url: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/StreamingMedia/StreamingCN.yaml
+    interval: 86400
+  Alibaba:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Alibaba.yaml
+    url: https://paste.ee/r/OTMVS/0
+    interval: 86400
+  Crypto:
+    type: http
+    behavior: classical
+    path: ./RuleSet/Crypto.yaml
+    url: https://gist.githubusercontent.com/duhd1993/e1bb32ed2df6ab5d221d68fef3b8bda0/raw/crypto.yaml
+    interval: 86400
+
+rules:
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - DOMAIN-SUFFIX,alicdn.com,DIRECT
+  - DOMAIN,kfupload.alibaba.com,DIRECT
+  #- RULE-SET,StreamingCN,CN
+  - RULE-SET,Crypto,PROXY
+  - RULE-SET,Alibaba,CN
+  - GEOIP,CN,CN
+  - MATCH,OUT
