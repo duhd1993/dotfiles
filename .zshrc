@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/mambaforge/bin:/usr/local/bin:$PATH
+export PATH=$HOME/mambaforge/bin:/opt/homebrew/opt/node@16/bin:/usr/local/bin:$PATH
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
@@ -13,6 +13,7 @@ autoload -Uz _zinit
 zinit snippet OMZP::git
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::theme-and-appearance.zsh
+zinit snippet OMZL::prompt_info_functions.zsh
 zinit cdclear -q
 setopt promptsubst
 zinit snippet OMZT::ys
@@ -28,7 +29,8 @@ zinit snippet OMZ::plugins/macos
 zinit light zsh-users/zsh-autosuggestions
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zinit snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-zinit snippet OMZP::fasd
+zinit ice svn
+zinit snippet OMZ::plugins/z
 zinit wait lucid atinit'zicompinit; zicdreplay' for \
     zdharma-continuum/fast-syntax-highlighting
 
@@ -40,3 +42,4 @@ if [ "$(command -v exa)" ]; then
     alias la='exa -G  --color auto --icons -a -s type'
     alias ll='exa -l --color always --icons -a -s type'
 fi
+

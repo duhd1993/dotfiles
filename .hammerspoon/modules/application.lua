@@ -2,7 +2,8 @@ app_list = {
     {key = 'A', name = 'alacritty'},
     {key = 'E', name = 'Sublime Text'},
     {key = 'G', name = 'Marta'},
-    {key = 'T', name = 'Telegram'}
+    {key = 'T', name = 'Telegram'},
+    {key = "Q", name = 'Quantumult X'}
 }
 
 for _, app in ipairs(app_list) do

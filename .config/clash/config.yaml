@@ -34,9 +34,9 @@ proxies:
   - name: "yecao"
     type: ss
     server: cn2.rongdede.com
-    port: 40024
+    port: 40016
     cipher: rc4-md5
-    password: "ghty12"
+    password: "791423"
   - name: "music"
     type: http
     server: 67.230.175.121

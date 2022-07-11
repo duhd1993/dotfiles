@@ -5,7 +5,6 @@ let mapleader = "\<Space>"
 " vim-plug plugin manager
 call plug#begin('~/.vim/plugged')
 
-Plug 'jceb/vim-orgmode'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
@@ -18,7 +17,6 @@ Plug 'gu-fan/riv.vim'
 Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
-
 " auto toggle line number
 set number relativenumber
 augroup numbertoggle
@@ -82,7 +80,7 @@ nnoremap <leader>o :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 map <Leader> <Plug>(easymotion-prefix)
 
 " mapping for fzf
-nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>s :Files<CR>
 
 " split behaviours
 set splitbelow
