@@ -1,4 +1,7 @@
-export PATH=$HOME/mambaforge/bin:/opt/homebrew/opt/node@16/bin:/usr/local/bin:$PATH
+export PATH=$HOME/mambaforge/bin:$HOME/.local/bin:/opt/homebrew/opt/node@16/bin:/usr/local/bin:$PATH
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
