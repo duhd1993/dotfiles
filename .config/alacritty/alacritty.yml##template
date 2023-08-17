@@ -169,6 +169,7 @@ key_bindings:
   - { key: B,     mods: Alt,     chars: "\x1bb"} # one word left
   - { key: F,    mods: Alt,     chars: "\x1bf"} # one word right
   - { key: D,    mods: Alt,     chars: "\x1bd"} # delete one word
+  - { key: C,    mods: Alt,     chars: "\x1bc"} # used by fzf shortcut
   - { key: U,    mods: Alt,     chars: "\x1bu"}
   - { key: N,    mods: Alt,     chars: "\x1bn"}
   - { key: P,    mods: Alt,     chars: "\x1bp"}
