@@ -90,8 +90,10 @@ set splitright
 set pastetoggle=<F2>
 
 " pass sequence to outer terminal to get bg
-if $TERM =~ "tmux"
+if $TERM =~ "tmux" 
     let &t_RB="\ePtmux;\e\e]11;?\007\e\\"
+elseif $TERM =~ "xterm"
+    let &t_RB="\e]11;?\007"
 endif
 
 " paste does not replace default buffer

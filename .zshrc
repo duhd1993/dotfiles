@@ -25,6 +25,7 @@ autoload -U colors
 colors
 
 # load plugins
+zinit snippet https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.bash_sh_zsh
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::functions.zsh
 zinit ice svn
@@ -39,10 +40,11 @@ zinit wait lucid atinit'zicompinit; zicdreplay' for \
 
 # some customization
 zle_highlight=('paste:none')
-source ~/mambaforge/etc/profile.d/conda.sh
-if [ "$(command -v exa)" ]; then
-    alias ls='exa -G  --color auto --icons -s type'
-    alias la='exa -G  --color auto --icons -a -s type'
-    alias ll='exa -l --color always --icons -a -s type'
+export NNN_FIFO=/tmp/nnn.fifo
+if [[ "`uname`" == "Darwin"  ]]; then
+    source ~/mambaforge/etc/profile.d/conda.sh
+    alias ls='eza -G  --color auto --icons -s type'
+    alias la='eza -G  --color auto --icons -a -s type'
+    alias ll='eza -l --color always --icons -a -s type'
 fi
 
